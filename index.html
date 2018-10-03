@@ -6,10 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .swiper-container,
+        .swiper-wrapper,
+        .swiper-slide {
+            height: 100%;
+        }
+
+        .loading,
+        .welcome {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+        }
+
+        .loading {
+            z-index: 2;
+            background-color: skyblue;
+        }
+
+        .welcome {
+            z-index: 1;
+            background-color: hotpink;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+        </div>
+        <div class="loading"></div>
+        <div class="welcome"></div>
+    </div>
 
+
+    <script src="lib/zepto.js"></script>
+    <script src="lib/event.js"></script>
+    <script src="lib/fx.js"></script>
+    <script src="lib/fx_methods.js"></script>
+    <script src="lib/touch.js"></script>
+    <script src="lib/swiper.min.js"></script>
+    <script>
+        new Swiper('.swiper-container', {
+            direction: 'vertical'
+        })
+        $('.loading').click(function () {
+            $(this).fadeOut()
+        })
+        $('.welcome').click(function () {
+            $(this).fadeOut()
+        })
+    </script>
 </body>
 
 </html>
