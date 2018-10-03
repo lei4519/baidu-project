@@ -3,78 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script>
+      document.querySelector('html').style.fontSize = `${window.screen.width / 20}px`
+      window.onresize = function () {
+        document.querySelector('html').style.fontSize = `${window.screen.width / 20}px`
+      }
+    </script>
+    <link rel="stylesheet" href="css/index.css">
     <style>
-        html,
-        body {
-            height: 100%;
-        }
 
-        body {
-            margin: 0;
-        }
-
-        .swiper-container,
-        .swiper-wrapper,
-        .swiper-slide {
-            height: 100%;
-        }
-
-        .loading,
-        .welcome {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-        }
-
-        .loading {
-            z-index: 2;
-            background-color: skyblue;
-        }
-
-        .welcome {
-            z-index: 1;
-            background-color: hotpink;
-        }
     </style>
 </head>
 
 <body>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-        </div>
-        <div class="loading"></div>
-        <div class="welcome"></div>
+<div class="loading">
+    <div class="wrapper">
+        <img class="rider" src="./images/loading/rider1_.png">
+        <div class="progress"></div>
+        <img class="loading-txt" src="./images/loading/loading-txt.png" alt="">
     </div>
+    <div class="logo">
+        <img src="./images/loading/waimai-logo.png">
+        <div class="text">@ 2015 Baidu Waimai Produced</div>
+    </div>
+</div>
+<div class="welcome"></div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+    </div>
+</div>
 
+<script src="lib/swiper.min.js"></script>
+<script src="lib/zepto.js"></script>
+<script src="lib/event.js"></script>
+<script src="lib/touch.js"></script>
+<script src="lib/fx.js"></script>
+<script src="lib/fx_methods.js"></script>
 
-    <script src="lib/zepto.js"></script>
-    <script src="lib/event.js"></script>
-    <script src="lib/fx.js"></script>
-    <script src="lib/fx_methods.js"></script>
-    <script src="lib/touch.js"></script>
-    <script src="lib/swiper.min.js"></script>
-    <script>
-        new Swiper('.swiper-container', {
-            direction: 'vertical'
-        })
-        $('.loading').click(function () {
-            $(this).fadeOut()
-        })
-        $('.welcome').click(function () {
-            $(this).fadeOut()
-        })
-    </script>
+<script>
+  new Swiper('.swiper-container', {
+    direction: 'vertical'
+  })
+  // $('.loading').click(function () {
+  //     $(this).fadeOut()
+  // })
+  // $('.welcome').click(function () {
+  //     $(this).fadeOut()
+  // })
+</script>
 </body>
 
 </html>
