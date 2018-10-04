@@ -47,7 +47,6 @@
   }
 }
 
-
 .welcome {
   position: absolute;
   top: 0;
@@ -61,12 +60,12 @@
     @include size(640, 673);
     @include bgImg('../images/page1/clouds.png');
   }
-  .info{
+  .info {
     @include center(-397/2);
     top: p2r(42);
     @include size(397, 224);
     @include bgImg('../images/page1/theme-title.png');
-    .hello{
+    .hello {
       position: absolute;
       top: p2r(20);
       right: p2r(8);
@@ -74,11 +73,11 @@
       @include bgImg('../images/page1/hello.png');
     }
   }
-  .rider-box{
+  .rider-box {
     @include center(-167/2);
     bottom: p2r(346);
     @include size(167, 279);
-    .rider{
+    .rider {
       position: absolute;
       top: 0;
       left: 0;
@@ -86,56 +85,56 @@
       height: 100%;
       @include bgImg('../images/page1/rider2.png');
     }
-    .jet{
+    .jet {
       position: absolute;
       bottom: 0;
       @include size(167, 32);
       @include bgImg('../images/page1/jet1.png');
     }
   }
-  .grassland{
+  .grassland {
     position: absolute;
     bottom: 0;
     @include size(640, 396);
     @include bgImg('../images/page1/grass1.png');
-    .grass{
+    .grass {
       position: absolute;
       bottom: 0;
       @include size(640, 228);
       @include bgImg('../images/page1/grass2.png');
     }
   }
-  .trees{
+  .trees {
     @include center(-599/2);
     bottom: p2r(352);
     @include size(599, 71);
     @include bgImg('../images/page1/trees.png');
   }
-  .rotate-box-btn{
+  .rotate-box-btn {
     @include center(-208/2);
     bottom: p2r(86);
     @include size(208, 208);
     .circle,
-    .rotate-circle{
+    .rotate-circle {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
     }
-    .circle{
+    .circle {
       @include bgImg('../images/page1/circle1.png');
     }
-    .rotate-circle{
+    .rotate-circle {
       @include bgImg('../images/page1/circle2.png');
     }
-    .btn{
+    .btn {
       width: 100%;
       height: 100%;
       background: url(../images/page1/bear-btn-aft.png) no-repeat center / p2r(124) p2r(113);
     }
   }
-  .text{
+  .text {
     position: absolute;
     bottom: p2r(38);
     width: 100%;
@@ -145,7 +144,7 @@
   }
 }
 
-.waimai-container{
+.waimai-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -153,24 +152,237 @@
   height: 100%;
 }
 
-.page1{
+.page1 {
   background-color: #be8651;
+  .title {
+    z-index: 1;
+    position: absolute;
+    top: p2r(32);
+    left: p2r(32);
+    padding-left: p2r(15);
+    color: #fff;
+    h3 {
+      font-size: p2r(64);
+      margin-top: p2r(12);
+    }
+    p {
+      font-size: p2r(24);
+    }
+    .line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: p2r(5);
+      background-color: #fff;
+    }
+  }
+  .scroll-page1 {
+    .bg {
+      @include center(-576/2);
+      bottom: p2r(252);
+      @include bgImg('../images/page2/bg1.png');
+      @include size(576, 573);
+    }
+    .person {
+      @include center(-439/2);
+      bottom: p2r(290);
+      @include bgImg('../images/page2/front1.png');
+      @include size(439, 349);
+      z-index: 1;
+      .files {
+        @include size(85, 50);
+        background-image: url('../images/page2/papers.png');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: p2r(115) p2r(114);
+        position: absolute;
+        left: p2r(27);
+        bottom: p2r(104);
+        .paper1 {
+          @include size(86, 26);
+          background-image: url('../images/page2/papers.png');
+          background-repeat: no-repeat;
+          background-position: 0 p2r(-32);
+          background-size: p2r(115) p2r(114);
+          position: absolute;
+          left: p2r(-70);
+          bottom: p2r(45);
+        }
+        .paper2 {
+          @include size(64, 20);
+          background-image: url('../images/page2/papers.png');
+          background-repeat: no-repeat;
+          background-position: p2r(-45) 0;
+          background-size: p2r(115) p2r(114);
+          position: absolute;
+          right: 0;
+          bottom: p2r(80);
+        }
+      }
+    }
+    .sphere {
+      position: absolute;
+      bottom: 0;
+      @include bgImg('../images/page2/sphere1.png');
+      @include size(640, 356);
+    }
+    .message-contarner {
+      position: absolute;
+      bottom: p2r(140);
+      right: p2r(140);
+      @include bgImg('../images/page2/txt-bubbl.png');
+      @include size(363, 119);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .info {
+        @include bgImg('../images/page2/txt-work.png');
+        @include size(220, 30);
+      }
+    }
+  }
+  .scroll-page2 {
+    .bg {
+      @include center(-582/2);
+      bottom: p2r(252);
+      @include bgImg('../images/page2/bg2.png');
+      @include size(582, 520);
+    }
+    .person {
+      @include size(436, 332);
+      @include center(-436/2);
+      bottom: p2r(270);
+      z-index: 1;
+      @include bgImg('../images/page2/relax.png');
+      .leg1 {
+        position: absolute;
+        left: p2r(195);
+        bottom: p2r(110);
+        @include size(113, 24);
+        @include bgImg('../images/page2/leg1.png');
+      }
+      .leg2 {
+        position: absolute;
+        left: p2r(193);
+        bottom: p2r(120);
+        @include size(85, 71);
+        @include bgImg('../images/page2/leg2.png');
+      }
+    }
+    .sphere {
+      position: absolute;
+      bottom: 0;
+      @include bgImg('../images/page2/sphere1.png');
+      @include size(640, 356);
+    }
+    .message-contarner {
+      position: absolute;
+      bottom: p2r(140);
+      right: p2r(140);
+      @include bgImg('../images/page2/txt-bubbl.png');
+      @include size(363, 119);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .info {
+        @include bgImg('../images/page2/txt-life.png');
+        @include size(224, 31);
+      }
+    }
+  }
+  .scroll-page3 {
+    .bg {
+      @include center(-561/2);
+      bottom: p2r(270);
+      @include bgImg('../images/page2/bg3.png');
+      @include size(561, 516);
+    }
+    .person {
+      @include size(503, 229);
+      @include center(-503/2);
+      bottom: p2r(300);
+      z-index: 1;
+      @include bgImg('../images/page2/person.png');
+      .word1 {
+        position: absolute;
+        left: p2r(7);
+        bottom: p2r(194);
+        @include bgImg('../images/page2/word1.png');
+        @include size(92, 83);
+      }
+      .word2 {
+        position: absolute;
+        left: p2r(115);
+        bottom: p2r(245);
+        @include bgImg('../images/page2/word2.png');
+        @include size(77, 70);
+      }
+      .word3 {
+        position: absolute;
+        right: p2r(130);
+        bottom: p2r(220);
+        @include bgImg('../images/page2/word3.png');
+        @include size(115, 104);
+      }
+      .word4 {
+        position: absolute;
+        right: p2r(12);
+        bottom: p2r(230);
+        @include bgImg('../images/page2/word4.png');
+        @include size(79, 73);
+      }
+    }
+    .sphere {
+      position: absolute;
+      bottom: 0;
+      @include bgImg('../images/page2/sphere1.png');
+      @include size(640, 356);
+    }
+    .message-contarner {
+      position: absolute;
+      bottom: p2r(140);
+      right: p2r(140);
+      @include bgImg('../images/page2/txt-bubbl.png');
+      @include size(363, 119);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .info {
+        @include bgImg('../images/page2/txt-res.png');
+        @include size(220, 30);
+      }
+    }
+  }
+  .bear {
+    position: absolute;
+    bottom: 0;
+    right: p2r(38);
+    @include bgImg('../images/page2/bear1.png');
+    @include size(178, 134);
+  }
 }
-.page2{
+
+.page2 {
   background-color: #ee4143;
 }
-.page3{
+
+.page3 {
   background-color: #dd8a03;
 }
-.page4{
+
+.page4 {
   background-color: #3fa100;
 }
-.page5{
+
+.page5 {
   background-color: #0098cf;
 }
-.page6{
+
+.page6 {
   background-color: #b527a0;
 }
-.page7{
+
+.page7 {
   background-color: #19072a;
 }
