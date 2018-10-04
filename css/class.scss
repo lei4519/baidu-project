@@ -1,0 +1,15 @@
+@function p2r($num){
+  @return ($num / 32) * 1rem;
+}
+@mixin center($width){
+  position: absolute;
+  left: 50%;
+  margin-left: p2r($width);
+}
+@mixin bgImg($url){
+  background:  url($url) no-repeat center / 100% 100%;
+}
+@mixin size($width, $height){
+  width: p2r($width);
+  height: p2r($height);
+}

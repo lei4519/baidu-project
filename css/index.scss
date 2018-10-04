@@ -1,0 +1,176 @@
+@import "swiper.min.scss";
+@import "base.scss";
+@import "class.scss";
+
+.loading {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background-color: #ffece9;
+  .rider {
+    position: absolute;
+    top: p2r(232);
+    right: p2r(108);
+    @include size(154, 121);
+    @include bgImg('../images/loading/rider1_.png');
+  }
+  .progress {
+    @include center(-416/2);
+    top: p2r(360);
+    @include size(416, 20);
+    background-color: #fc2e4d;
+    border: 2px solid #373838;
+    border-radius: 20px;
+  }
+  .loading-txt {
+    @include center(-220/2);
+    top: p2r(420);
+    @include size(220, 28);
+    @include bgImg('../images/loading/loading-txt.png');
+  }
+  .logo {
+    @include center(-162/2);
+    bottom: p2r(118);
+    @include size(162, 39);
+    @include bgImg('../images/loading/waimai-logo.png');
+
+  }
+  .copyright {
+    position: absolute;
+    bottom: p2r(73);
+    font-size: p2r(24);
+    color: #ff96a4;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+.welcome {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: deepskyblue;
+  .clouds {
+    position: absolute;
+    bottom: 0;
+    @include size(640, 673);
+    @include bgImg('../images/page1/clouds.png');
+  }
+  .info{
+    @include center(-397/2);
+    top: p2r(42);
+    @include size(397, 224);
+    @include bgImg('../images/page1/theme-title.png');
+    .hello{
+      position: absolute;
+      top: p2r(20);
+      right: p2r(8);
+      @include size(70, 75);
+      @include bgImg('../images/page1/hello.png');
+    }
+  }
+  .rider-box{
+    @include center(-167/2);
+    bottom: p2r(346);
+    @include size(167, 279);
+    .rider{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include bgImg('../images/page1/rider2.png');
+    }
+    .jet{
+      position: absolute;
+      bottom: 0;
+      @include size(167, 32);
+      @include bgImg('../images/page1/jet1.png');
+    }
+  }
+  .grassland{
+    position: absolute;
+    bottom: 0;
+    @include size(640, 396);
+    @include bgImg('../images/page1/grass1.png');
+    .grass{
+      position: absolute;
+      bottom: 0;
+      @include size(640, 228);
+      @include bgImg('../images/page1/grass2.png');
+    }
+  }
+  .trees{
+    @include center(-599/2);
+    bottom: p2r(352);
+    @include size(599, 71);
+    @include bgImg('../images/page1/trees.png');
+  }
+  .rotate-box-btn{
+    @include center(-208/2);
+    bottom: p2r(86);
+    @include size(208, 208);
+    .circle,
+    .rotate-circle{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .circle{
+      @include bgImg('../images/page1/circle1.png');
+    }
+    .rotate-circle{
+      @include bgImg('../images/page1/circle2.png');
+    }
+    .btn{
+      width: 100%;
+      height: 100%;
+      background: url(../images/page1/bear-btn-aft.png) no-repeat center / p2r(124) p2r(113);
+    }
+  }
+  .text{
+    position: absolute;
+    bottom: p2r(38);
+    width: 100%;
+    font-size: p2r(32);
+    color: #485b00;
+    text-align: center;
+  }
+}
+
+.waimai-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page1{
+  background-color: #be8651;
+}
+.page2{
+  background-color: #ee4143;
+}
+.page3{
+  background-color: #dd8a03;
+}
+.page4{
+  background-color: #3fa100;
+}
+.page5{
+  background-color: #0098cf;
+}
+.page6{
+  background-color: #b527a0;
+}
+.page7{
+  background-color: #19072a;
+}
