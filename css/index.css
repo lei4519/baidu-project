@@ -127,7 +127,7 @@
 }
 .swiper-button-next.swiper-button-disabled,
 .swiper-button-prev.swiper-button-disabled {
-  opacity: .35;
+  opacity: 0.35;
   cursor: auto;
   pointer-events: none;
 }
@@ -162,10 +162,10 @@
 .swiper-pagination {
   position: absolute;
   text-align: center;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -409,7 +409,7 @@ button.swiper-pagination-bullet {
   width: 100%;
   height: 100%;
   background: #000;
-  opacity: .6;
+  opacity: 0.6;
   -webkit-filter: blur(50px);
   filter: blur(50px);
   z-index: 0;
@@ -576,6 +576,11 @@ body,
 .swiper-slide {
   height: 100%;
 }
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .loading {
   position: absolute;
   top: 0;
@@ -584,53 +589,120 @@ body,
   z-index: 3;
   background-color: #ffece9;
 }
-.loading .wrapper {
-  position: relative;
-  width: 13rem;
-  height: 7.03125rem;
-  margin: 7.28125rem auto;
-  text-align: center;
-  padding-top: 3.96875rem;
-}
-.loading .wrapper .rider {
+.loading .rider {
   position: absolute;
-  left: 74%;
-  top: 0;
+  top: 7.25rem;
+  right: 3.375rem;
   width: 4.8125rem;
   height: 3.78125rem;
+  background: url(../images/loading/rider1_.png) no-repeat center / 100% 100%;
 }
-.loading .wrapper .progress {
+.loading .progress {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 11.25rem;
   width: 13rem;
   height: 0.625rem;
   background-color: #fc2e4d;
   border: 2px solid #373838;
   border-radius: 20px;
 }
-.loading .wrapper .loading-txt {
-  margin-top: 40px;
+.loading .loading-txt {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 12.5rem;
   width: 6.875rem;
   height: 0.875rem;
+  background: url(../images/loading/loading-txt.png) no-repeat center / 100% 100%;
 }
 .loading .logo {
   position: absolute;
-  bottom: 0;
-  height: 5rem;
-  width: 100%;
-  text-align: center;
-}
-.loading .logo img {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3.6875rem;
   width: 5.0625rem;
   height: 1.21875rem;
-  margin-bottom: 0.75rem;
+  background: url(../images/loading/waimai-logo.png) no-repeat center / 100% 100%;
 }
-.loading .logo .text {
-  color: #ff96a4;
+.loading .copyright {
+  position: absolute;
+  bottom: 2.28125rem;
   font-size: 0.75rem;
+  color: #ff96a4;
+  text-align: center;
+  width: 100%;
 }
 .welcome {
   position: absolute;
   top: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
+  background-color: deepskyblue;
 }
+.welcome .clouds {
+  position: absolute;
+  bottom: 0;
+  width: 20rem;
+  height: 21.03125rem;
+  background: url(../images/page1/clouds.png) no-repeat center / 100% 100%;
+}
+.welcome .title-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1.3125rem;
+  width: 12.40625rem;
+  height: 7rem;
+  background: url(../images/page1/theme-title.png) no-repeat center / 100% 100%;
+}
+.welcome .title-box .hello {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.25rem;
+  width: 2.1875rem;
+  height: 2.34375rem;
+  background: url(../images/page1/hello.png) no-repeat center / 100% 100%;
+}
+.welcome .rider {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10.8125rem;
+  width: 5.21875rem;
+  height: 8.71875rem;
+  background: url(../images/page1/rider2.png) no-repeat center / 100% 100%;
+}
+.welcome .rider .jet {
+  position: absolute;
+  bottom: 0;
+  width: 5.21875rem;
+  height: 1rem;
+  background: url(../images/page1/jet1.png) no-repeat center / 100% 100%;
+}
+.welcome .trees {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 11rem;
+  width: 18.71875rem;
+  height: 2.21875rem;
+  background: url(../images/page1/trees.png) no-repeat center / 100% 100%;
+}
+.welcome .grassland {
+  position: absolute;
+  bottom: 0;
+  width: 20rem;
+  height: 12.375rem;
+  background: url(../images/page1/grass1.png) no-repeat center / 100% 100%;
+}
+.welcome .grassland .grass {
+  position: absolute;
+  bottom: 0;
+  width: 20rem;
+  height: 7.125rem;
+  background: url(../images/page1/grass2.png) no-repeat center / 100% 100%;
+}
+/*# sourceMappingURL=index.css.map */
