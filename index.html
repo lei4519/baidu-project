@@ -52,7 +52,7 @@
                     <p>经常有这种时候...</p>
                     <div class="line"></div>
                 </div>
-                <div style="display: none;" class="scroll-page1">
+                <div class="scroll-page1">
                     <div class="bg"></div>
                     <div class="person">
                         <div class="files">
@@ -60,18 +60,16 @@
                             <div class="paper2"></div>
                         </div>
                     </div>
-                    <div class="sphere"></div>
                     <div class="message-contarner">
                         <div class="info"></div>
                     </div>
                 </div>
-                <div class="scroll-page2"  style="display: none;">
+                <div class="scroll-page2">
                     <div class="bg"></div>
                     <div class="person">
                         <div class="leg1"></div>
                         <div class="leg2"></div>
                     </div>
-                    <div class="sphere"></div>
                     <div class="message-contarner">
                         <div class="info"></div>
                     </div>
@@ -84,19 +82,114 @@
                         <div class="word3"></div>
                         <div class="word4"></div>
                     </div>
-                    <div class="sphere"></div>
                     <div class="message-contarner">
                         <div class="info"></div>
                     </div>
                 </div>
+                <div class="sphere"></div>
                 <div class="bear"></div>
             </div>
-            <div class="swiper-slide page2">slider 2</div>
-            <div class="swiper-slide page3">slider 3</div>
-            <div class="swiper-slide page4">slider 4</div>
-            <div class="swiper-slide page5">slider 5</div>
-            <div class="swiper-slide page6">slider 6</div>
-            <div class="swiper-slide page7">slider 7</div>
+            <div class="swiper-slide page2">
+                <div class="title">
+                    <h3>这时候</h3>
+                    <p>如果有一份美味外卖...</p>
+                    <p>正好出现...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="sphere"></div>
+                <div class="bear">
+                    <div class="face1"></div>
+                    <div class="face2"></div>
+                    <div class="hand-left"></div>
+                    <div class="hand-right"></div>
+                </div>
+                <div class="table"></div>
+                <div class="foods"></div>
+            </div>
+            <div class="swiper-slide page3">
+                <div class="title">
+                    <h3>这时候</h3>
+                    <p>如果有一份美味外卖...</p>
+                    <p>正好出现...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="sphere"></div>
+                <div class="license"></div>
+                <div class="oil"></div>
+                <div class="evil"></div>
+                <div class="bear"></div>
+            </div>
+            <div class="swiper-slide page4">
+                <div class="title">
+                    <h3>百度外卖</h3>
+                    <p>只做有品质的外卖...</p>
+                    <p>操作快捷...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="sphere"></div>
+                <div class="card1"></div>
+                <div class="card2"></div>
+                <div class="card3"></div>
+                <div class="bear"></div>
+            </div>
+            <div class="swiper-slide page5">
+                <div class="title">
+                    <h3>无论前方</h3>
+                    <p>狂风, 大雨, 还是飘雪...</p>
+                    <p>始终坚持在路上...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="sphere"></div>
+                <div class="cloud"></div>
+                <div class="bear">
+                    <div class="shadow"></div>
+                </div>
+            </div>
+            <div class="swiper-slide page6">
+                <div class="title">
+                    <h3>丰富礼品</h3>
+                    <p>让你边吃边省钱</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="sphere"></div>
+                <div class="bear">
+                    <div class="gift-box">
+                        <div class="gift1"></div>
+                        <div class="gift2"></div>
+                        <div class="gift3"></div>
+                        <div class="gift4"></div>
+                        <div class="gift5"></div>
+                        <div class="gift6"></div>
+                        <div class="gift7"></div>
+                        <div class="gift8"></div>
+                        <div class="gift9"></div>
+                        <div class="gift10"></div>
+                        <div class="gift11"></div>
+                        <div class="gift12"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide page7">
+                <div class="title">
+                    <h3>所有的努力</h3>
+                    <p>就是为了健康美味的外面...</p>
+                    <p>呈现给你...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="streetlight">
+                    <div class="lamplight"></div>
+                </div>
+                <div class="sphere"></div>
+                <div class="moto"></div>
+                <div class="bear"></div>
+                <div class="share"></div>
+                <div class="www">waimai.baidu.com</div>
+            </div>
         </div>
     </div>
 
@@ -109,7 +202,8 @@
 
     <script>
         new Swiper('.waimai-container', {
-            direction: 'vertical'
+            direction: 'vertical',
+            initialSlide: 6
         })
         $('.loading').click(function () {
             $(this).fadeOut()

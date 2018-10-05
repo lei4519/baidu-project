@@ -1,0 +1,44 @@
+.loading {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background-color: #ffece9;
+  .rider {
+    position: absolute;
+    top: p2r(232);
+    right: p2r(108);
+    @include size(154, 121);
+    @include bgImg('../images/loading/rider1_.png');
+  }
+  .progress {
+    @include center(-416/2);
+    top: p2r(360);
+    @include size(416, 20);
+    background-color: #fc2e4d;
+    border: 2px solid #373838;
+    border-radius: 20px;
+  }
+  .loading-txt {
+    @include center(-220/2);
+    top: p2r(420);
+    @include size(220, 28);
+    @include bgImg('../images/loading/loading-txt.png');
+  }
+  .logo {
+    @include center(-162/2);
+    bottom: p2r(118);
+    @include size(162, 39);
+    @include bgImg('../images/loading/waimai-logo.png');
+
+  }
+  .copyright {
+    position: absolute;
+    bottom: p2r(73);
+    font-size: p2r(24);
+    color: #ff96a4;
+    text-align: center;
+    width: 100%;
+  }
+}
