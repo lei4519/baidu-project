@@ -13,12 +13,11 @@ $(function () {
             })
     }, 1000);
 
-    $('.welcome .rotate-box-btn').click(() => {
-        $('.rider-box').addClass('moving')
-            .find('.rider')
+    $('.welcome .rotate-box-btn').longTap(() => {
+        $('.rider-box').addClass('rider-moving')
             .on('animationend', () => {
                 $('.welcome').fadeOut(1000, () => {
-
+                  $('.page1').addClass('animate')
                 })
             })
     })

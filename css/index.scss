@@ -1,7 +1,6 @@
 @import "swiper.min.scss";
 @import "base.scss";
 @import "class.scss";
-
 @import "loading.scss";
 @import "welcome.scss";
 
@@ -12,7 +11,7 @@
   width: 100%;
   z-index: 3;
   background-color: #ffece9;
-  
+
   .rider {
     position: absolute;
     top: p2r(232);
@@ -28,7 +27,7 @@
     border: 2px solid #373838;
     border-radius: 20px;
     overflow: hidden;
-    .line{
+    .line {
       height: 100%;
       width: 80%;
       background-color: #ffece9;
@@ -55,48 +54,48 @@
     text-align: center;
     width: 100%;
   }
-  &.animate{
-    .line{
+  &.animate {
+    .line {
       animation: loading 1.5s linear forwards;
     }
-    .rider{
+    .rider {
       animation: moving 1.5s linear forwards;
     }
   }
   @keyframes loading {
-    to{
+    to {
       width: 0%;
     }
   }
   @keyframes moving {
-    10%{
+    10% {
       transform: translate(p2r(-26*1), p2r(-10));
     }
-    20%{
+    20% {
       transform: translate(p2r(-26*2), p2r(10));
     }
-    30%{
+    30% {
       transform: translate(p2r(-26*3), p2r(-10));
     }
-    40%{
+    40% {
       transform: translate(p2r(-26*4), p2r(10));
     }
-    50%{
+    50% {
       transform: translate(p2r(-26*5), p2r(-10));
     }
-    60%{
+    60% {
       transform: translate(p2r(-26*6), p2r(10));
     }
-    70%{
+    70% {
       transform: translate(p2r(-26*7), p2r(-10));
     }
-    80%{
+    80% {
       transform: translate(p2r(-26*8), p2r(10));
     }
-    90%{
+    90% {
       transform: translate(p2r(-26*9), p2r(-10));
     }
-    100%{
+    100% {
       transform: translate(p2r(-26*10), p2r(10));
     }
   }
@@ -206,115 +205,115 @@
     color: #485b00;
     text-align: center;
   }
-  &.animate{
-    .grassland{
-        animation: grassland 0.5s forwards;
-        .grass{
-          animation: grass 0.5s 0.5s linear forwards;
-        }
+  &.animate {
+    .grassland {
+      animation: grassland 0.5s forwards;
+      .grass {
+        animation: grass 0.5s 0.5s linear forwards;
+      }
     }
-    .trees{
+    .trees {
       animation: trees 0.5s 1s forwards;
     }
-    .rotate-box-btn{
+    .rotate-box-btn {
       animation: rotate-box-btn 0.5s 1.5s forwards;
-      .rotate-circle{
+      .rotate-circle {
         animation: rotate-circle 1s linear infinite;
       }
     }
-    .rider-box{
+    .rider-box {
       animation: rider-box 0.5s 2s forwards;
-      .rider{
+      .rider {
         animation: rider 0.5s 2.5s linear infinite;
       }
-      .jet{
+      .jet {
         animation: jet 0.5s 2.5s linear infinite;
       }
-      &.moving{
-        .rider,
-        .jet{
-          animation: moving 0.5s linear forwards;
-        }
+      &.rider-moving {
+        animation: rider-moving 0.5s linear forwards;
       }
     }
-    .info{
+    .info {
       animation: rider-box 0.5s 3s forwards;
-      .hello{
+      .hello {
         animation: jet 0.5s 3.5s forwards;
       }
     }
-    @keyframes moving {
-      to{
-        transform: scale(1.5) translateY(p2r(100));
+    @keyframes rider-moving {
+      from {
+        opacity: 1;
+      }
+      to {
+        transform: scale(2) translateY(100%);
         opacity: 0;
       }
     }
     @keyframes grassland {
-        to{
-            @include size(640, 396);
-        }
+      to {
+        @include size(640, 396);
+      }
     }
     @keyframes grass {
-        to{
-            transform: scale(1);
-            opacity: 1;
-        }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
     @keyframes trees {
-      0%{
+      0% {
         transform: translateY(-200%);
       }
-      80%{
+      80% {
         transform: translateY(10%);
         opacity: 1;
       }
-      90%{
+      90% {
         transform: translateY(-10%);
         opacity: 1;
       }
-      100%{
+      100% {
         transform: none;
         opacity: 1;
       }
     }
     @keyframes rotate-box-btn {
-      to{
+      to {
         transform: none;
         opacity: 1;
       }
     }
     @keyframes rotate-circle {
-      to{
+      to {
         transform: rotate(360deg)
       }
     }
     @keyframes rider-box {
-      from{
+      from {
         transform: translateY(-50%);
       }
-      to{
+      to {
         transform: none;
         opacity: 1;
       }
     }
     @keyframes rider {
-      from{
+      from {
         transform: translateY(-10%);
       }
-      to{
+      to {
         transform: none;
       }
     }
     @keyframes jet {
-      from{
+      from {
         transform: scale(0, 0);
       }
-      to{
+      to {
         opacity: 1;
         transform: none;
       }
     }
-}
+  }
 }
 
 .waimai-container {
@@ -331,19 +330,49 @@
     padding-left: p2r(20);
     color: #fff;
     h3 {
+      opacity: 0;
       font-size: p2r(64);
       margin-top: p2r(12);
     }
     p {
+      opacity: 0;
       font-size: p2r(24);
     }
     .line {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
+      height: 0%;
       width: p2r(5);
       background-color: #fff;
+    }
+  }
+}
+
+.swiper-slide.animate {
+  @keyframes r2l {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes heightBigger {
+    to {
+      height: 100%;
+    }
+  }
+  .title {
+    h3 {
+      animation: r2l 0.5s forwards;
+    }
+    p {
+      animation: r2l 0.5s 0.2s forwards;
+    }
+    .line {
+      animation: heightBigger 0.5s linear forwards;
     }
   }
 }
@@ -500,7 +529,7 @@
       position: absolute;
       bottom: p2r(140);
       right: p2r(140);
-      
+
       @include bgImg('../images/page2/txt-bubbl.png');
       @include size(363, 119);
       display: flex;
@@ -529,19 +558,19 @@
 
 .page2 {
   background-color: #ee4143;
-  .bg{
+  .bg {
     @include bgImg('../images/page3/bg4_.png');
     @include size(592, 490);
     @include center(-592/2);
     bottom: p2r(330);
   }
-  .sphere{
+  .sphere {
     @include bgImg('../images/page3/sphere2.png');
     @include size(640, 356);
     position: absolute;
     bottom: 0;
   }
-  .bear{
+  .bear {
     @include center(-227/2);
     bottom: p2r(310);
     @include size(227, 336);
@@ -549,28 +578,28 @@
     background-repeat: no-repeat;
     background-position: p2r(-103) p2r(-96);
     background-size: p2r(368) p2r(427);
-    .face1{
+    .face1 {
       position: absolute;
       top: 0;
       left: p2r(-102);
       @include size(102, 102);
       @include bgImg('../images/page3/face1.png');
     }
-    .face2{
+    .face2 {
       position: absolute;
       top: p2r(-102);
       right: p2r(-51);
       @include size(101, 102);
       @include bgImg('../images/page3/face2.png');
     }
-    .hand-left{
+    .hand-left {
       position: absolute;
       top: p2r(180);
       left: p2r(30);
       @include size(74, 77);
       @include bgImg('../images/page3/hand-left_.png');
     }
-    .hand-right{
+    .hand-right {
       position: absolute;
       top: p2r(180);
       right: p2r(30);
@@ -578,13 +607,13 @@
       @include bgImg('../images/page3/hand-right.png');
     }
   }
-  .table{
+  .table {
     @include center(-514/2);
     bottom: p2r(140);
     @include size(514, 258);
     @include bgImg('../images/page3/table.png');
   }
-  .foods{
+  .foods {
     @include center(-354/2);
     bottom: p2r(330);
     @include size(354, 152);
@@ -594,41 +623,41 @@
 
 .page3 {
   background-color: #dd8a03;
-  .bg{
+  .bg {
     @include center(-592/2);
     @include size(592, 580);
     @include bgImg('../images/page4/bg5.png');
     position: absolute;
     bottom: p2r(300);
   }
-  .sphere{
+  .sphere {
     @include size(640, 356);
     @include bgImg('../images/page4/sphere3.png');
     position: absolute;
     bottom: p2r(0);
   }
-  .license{
+  .license {
     @include size(197, 140);
     @include bgImg('../images/page4/license.png');
     position: absolute;
     left: p2r(40);
     bottom: p2r(500);
   }
-  .oil{
+  .oil {
     @include size(205, 107);
     @include bgImg('../images/page4/oil.png');
     position: absolute;
     left: p2r(225);
     bottom: p2r(660);
   }
-  .evil{
+  .evil {
     @include size(198, 163);
     @include bgImg('../images/page4/evil.png');
     position: absolute;
     right: p2r(30);
     bottom: p2r(480);
   }
-  .bear{
+  .bear {
     @include center(-206/2);
     bottom: p2r(195);
     @include size(206, 321);
@@ -638,41 +667,41 @@
 
 .page4 {
   background-color: #3fa100;
-  .bg{
+  .bg {
     @include center(-588/2);
     @include size(588, 333);
     @include bgImg('../images/page5/bg6.png');
     position: absolute;
     bottom: p2r(300);
   }
-  .sphere{
+  .sphere {
     @include size(640, 356);
     @include bgImg('../images/page5/sphere4.png');
     position: absolute;
     bottom: p2r(0);
   }
-  .card1{
+  .card1 {
     @include size(160, 175);
     @include bgImg('../images/page5/card1.png');
     position: absolute;
     left: p2r(32);
     bottom: p2r(435);
   }
-  .card2{
+  .card2 {
     @include size(161, 209);
     @include bgImg('../images/page5/card2.png');
     position: absolute;
     left: p2r(240);
     bottom: p2r(530);
   }
-  .card3{
+  .card3 {
     @include size(167, 184);
     @include bgImg('../images/page5/card3.png');
     position: absolute;
     right: p2r(45);
     bottom: p2r(420);
   }
-  .bear{
+  .bear {
     position: absolute;
     left: p2r(200);
     bottom: p2r(170);
@@ -683,31 +712,31 @@
 
 .page5 {
   background-color: #0098cf;
-  .bg{
+  .bg {
     @include center(-594/2);
     @include size(594, 493);
     @include bgImg('../images/page6/bg7.png');
     position: absolute;
     bottom: p2r(300);
   }
-  .sphere{
+  .sphere {
     @include size(640, 356);
     @include bgImg('../images/page6/sphere5.png');
     position: absolute;
     bottom: p2r(0);
   }
-  .cloud{
+  .cloud {
     @include size(432, 160);
     @include bgImg('../images/page6/weather-cloud.png');
     @include center(-432/2);
     bottom: p2r(645);
   }
-  .bear{
+  .bear {
     @include center(-230/2);
     bottom: p2r(175);
     @include size(230, 390);
     @include bgImg('../images/page6/rider2.png');
-    .shadow{
+    .shadow {
       @include center(-114/2);
       bottom: 0;
       @include size(114, 26);
@@ -718,95 +747,95 @@
 
 .page6 {
   background-color: #b527a0;
-  .bg{
+  .bg {
     @include center(-588/2);
     @include size(588, 333);
     @include bgImg('../images/page7/bg8.png');
     position: absolute;
     bottom: p2r(300);
   }
-  .sphere{
+  .sphere {
     @include size(640, 356);
     @include bgImg('../images/page7/sphere6.png');
     position: absolute;
     bottom: p2r(0);
   }
-  .bear{
+  .bear {
     @include center(-285/2);
     bottom: p2r(200);
     @include size(285, 328);
     @include bgImg('../images/page7/bear5.png');
-    .gift-box{
+    .gift-box {
       position: absolute;
       top: 0;
       left: 50%;
-      .gift1{
+      .gift1 {
         @include center(-35/2);
         @include size(35, 29);
         @include bgImg('../images/page7/gift1.png');
         transform: rotate(1*28deg) translateY(p2r(240));
       }
-      .gift2{
+      .gift2 {
         @include center(-93/2);
         @include size(93, 79);
         @include bgImg('../images/page7/gift2.png');
         transform: rotate(2*28deg) translateY(p2r(240));
       }
-      .gift3{
+      .gift3 {
         @include center(-72/2);
         @include size(72, 64);
         @include bgImg('../images/page7/gift3.png');
         transform: rotate(3*28deg) translateY(p2r(240));
       }
-      .gift4{
+      .gift4 {
         @include center(-91/2);
         @include size(91, 73);
         @include bgImg('../images/page7/gift4.png');
         transform: rotate(4*28deg) translateY(p2r(240));
       }
-      .gift5{
+      .gift5 {
         @include center(-99/2);
         @include size(99, 65);
         @include bgImg('../images/page7/gift5.png');
         transform: rotate(5*28deg) translateY(p2r(240));
       }
-      .gift6{
+      .gift6 {
         @include center(-107/2);
         @include size(107, 82);
         @include bgImg('../images/page7/gift6.png');
         transform: rotate(6*28deg) translateY(p2r(240));
       }
-      .gift7{
+      .gift7 {
         @include center(-107/2);
         @include size(107, 80);
         @include bgImg('../images/page7/gift7.png');
         transform: rotate(7*28deg) translateY(p2r(240));
       }
-      .gift8{
+      .gift8 {
         @include center(-88/2);
         @include size(88, 64);
         @include bgImg('../images/page7/gift8.png');
         transform: rotate(8*28deg) translateY(p2r(240));
       }
-      .gift9{
+      .gift9 {
         @include center(-78/2);
         @include size(78, 50);
         @include bgImg('../images/page7/gift9.png');
         transform: rotate(9*28deg) translateY(p2r(240));
       }
-      .gift10{
+      .gift10 {
         @include center(-49/2);
         @include size(49, 37);
         @include bgImg('../images/page7/gift10.png');
         transform: rotate(10*28deg) translateY(p2r(240));
       }
-      .gift11{
+      .gift11 {
         @include center(-51/2);
         @include size(51, 31);
         @include bgImg('../images/page7/gift11.png');
         transform: rotate(11*28deg) translateY(p2r(240));
       }
-      .gift12{
+      .gift12 {
         @include center(-37/2);
         @include size(37, 23);
         @include bgImg('../images/page7/gift12.png');
@@ -815,21 +844,22 @@
     }
   }
 }
+
 .page7 {
   background-color: #19072a;
-  .sphere{
+  .sphere {
     @include size(640, 384);
     @include bgImg('../images/page8/sphere7.png');
     position: absolute;
     bottom: 0;
   }
-  .streetlight{
+  .streetlight {
     @include size(80, 443);
     @include bgImg('../images/page8/streetlight.png');
     position: absolute;
     left: p2r(240);
     bottom: p2r(300);
-    .lamplight{
+    .lamplight {
       @include size(437, 427);
       @include bgImg('../images/page8/lamplight.png');
       position: absolute;
@@ -837,27 +867,27 @@
       top: p2r(10);
     }
   }
-  .moto{
+  .moto {
     @include size(200, 137);
     @include bgImg('../images/page8/moto.png');
     position: absolute;
     left: p2r(115);
     bottom: p2r(330);
   }
-  .bear{
+  .bear {
     @include size(276, 271);
     @include bgImg('../images/page8/bear6.png');
     position: absolute;
     right: p2r(144);
     bottom: p2r(280);
   }
-  .share{
+  .share {
     @include size(379, 113);
     @include bgImg('../images/page8/share.png');
     @include center(-379/2);
     bottom: p2r(140);
   }
-  .www{
+  .www {
     position: absolute;
     bottom: p2r(70);
     width: 100%;
@@ -866,3 +896,4 @@
     color: #b579d6;
   }
 }
+
