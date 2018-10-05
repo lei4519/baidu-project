@@ -18,12 +18,14 @@
 <body>
     <div class="loading" style="display: none;">
         <div class="rider"></div>
-        <div class="progress"></div>
+        <div class="progress">
+            <div class="line"></div>
+        </div>
         <div class="loading-txt"></div>
         <div class="logo"></div>
         <div class="copyright">@ 2015 Baidu Waimai Produced</div>
     </div>
-    <div class="welcome" style="display: none;">
+    <div class="welcome animate">
         <div class="clouds"></div>
         <div class="info">
             <div class="hello"></div>
@@ -199,19 +201,7 @@
     <script src="lib/touch.js"></script>
     <script src="lib/fx.js"></script>
     <script src="lib/fx_methods.js"></script>
-
-    <script>
-        new Swiper('.waimai-container', {
-            direction: 'vertical',
-            initialSlide: 6
-        })
-        $('.loading').click(function () {
-            $(this).fadeOut()
-        })
-        $('.welcome').click(function () {
-            $(this).fadeOut()
-        })
-    </script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

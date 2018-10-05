@@ -642,6 +642,13 @@ a {
   background-color: #fc2e4d;
   border: 2px solid #373838;
   border-radius: 20px;
+  overflow: hidden;
+}
+
+.loading .progress .line {
+  height: 100%;
+  width: 80%;
+  background-color: #ffece9;
 }
 
 .loading .loading-txt {
@@ -673,6 +680,53 @@ a {
   width: 100%;
 }
 
+.loading.animate .line {
+  animation: loading 1.5s linear forwards;
+}
+
+.loading.animate .rider {
+  animation: moving 1.5s linear forwards;
+}
+
+@keyframes loading {
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes moving {
+  10% {
+    transform: translate(-0.8125rem, -0.3125rem);
+  }
+  20% {
+    transform: translate(-1.625rem, 0.3125rem);
+  }
+  30% {
+    transform: translate(-2.4375rem, -0.3125rem);
+  }
+  40% {
+    transform: translate(-3.25rem, 0.3125rem);
+  }
+  50% {
+    transform: translate(-4.0625rem, -0.3125rem);
+  }
+  60% {
+    transform: translate(-4.875rem, 0.3125rem);
+  }
+  70% {
+    transform: translate(-5.6875rem, -0.3125rem);
+  }
+  80% {
+    transform: translate(-6.5rem, 0.3125rem);
+  }
+  90% {
+    transform: translate(-7.3125rem, -0.3125rem);
+  }
+  100% {
+    transform: translate(-8.125rem, 0.3125rem);
+  }
+}
+
 .welcome {
   position: absolute;
   top: 0;
@@ -698,12 +752,14 @@ a {
   width: 12.40625rem;
   height: 7rem;
   background: url("../images/page1/theme-title.png") no-repeat center/100% 100%;
+  opacity: 0;
 }
 
 .welcome .info .hello {
   position: absolute;
   top: 0.625rem;
   right: 0.25rem;
+  opacity: 0;
   width: 2.1875rem;
   height: 2.34375rem;
   background: url("../images/page1/hello.png") no-repeat center/100% 100%;
@@ -716,6 +772,7 @@ a {
   bottom: 10.8125rem;
   width: 5.21875rem;
   height: 8.71875rem;
+  opacity: 0;
 }
 
 .welcome .rider-box .rider {
@@ -730,6 +787,7 @@ a {
 .welcome .rider-box .jet {
   position: absolute;
   bottom: 0;
+  opacity: 0;
   width: 5.21875rem;
   height: 1rem;
   background: url("../images/page1/jet1.png") no-repeat center/100% 100%;
@@ -739,7 +797,7 @@ a {
   position: absolute;
   bottom: 0;
   width: 20rem;
-  height: 12.375rem;
+  height: 0.625rem;
   background: url("../images/page1/grass1.png") no-repeat center/100% 100%;
 }
 
@@ -749,6 +807,8 @@ a {
   width: 20rem;
   height: 7.125rem;
   background: url("../images/page1/grass2.png") no-repeat center/100% 100%;
+  transform: scale(3, 1);
+  opacity: 0;
 }
 
 .welcome .trees {
@@ -759,6 +819,7 @@ a {
   width: 18.71875rem;
   height: 2.21875rem;
   background: url("../images/page1/trees.png") no-repeat center/100% 100%;
+  opacity: 0;
 }
 
 .welcome .rotate-box-btn {
@@ -768,6 +829,8 @@ a {
   bottom: 2.6875rem;
   width: 6.5rem;
   height: 6.5rem;
+  transform: scale(0);
+  opacity: 0;
 }
 
 .welcome .rotate-box-btn .circle,
@@ -800,6 +863,132 @@ a {
   font-size: 1rem;
   color: #485b00;
   text-align: center;
+}
+
+.welcome.animate .grassland {
+  animation: grassland 0.5s forwards;
+}
+
+.welcome.animate .grassland .grass {
+  animation: grass 0.5s 0.5s linear forwards;
+}
+
+.welcome.animate .trees {
+  animation: trees 0.5s 1s forwards;
+}
+
+.welcome.animate .rotate-box-btn {
+  animation: rotate-box-btn 0.5s 1.5s forwards;
+}
+
+.welcome.animate .rotate-box-btn .rotate-circle {
+  animation: rotate-circle 1s linear infinite;
+}
+
+.welcome.animate .rider-box {
+  animation: rider-box 0.5s 2s forwards;
+}
+
+.welcome.animate .rider-box .rider {
+  animation: rider 0.5s 2.5s linear infinite;
+}
+
+.welcome.animate .rider-box .jet {
+  animation: jet 0.5s 2.5s linear infinite;
+}
+
+.welcome.animate .rider-box.moving .rider,
+.welcome.animate .rider-box.moving .jet {
+  animation: moving 0.5s linear forwards;
+}
+
+.welcome.animate .info {
+  animation: rider-box 0.5s 3s forwards;
+}
+
+.welcome.animate .info .hello {
+  animation: jet 0.5s 3.5s forwards;
+}
+
+@keyframes moving {
+  to {
+    transform: scale(1.5) translateY(3.125rem);
+    opacity: 0;
+  }
+}
+
+@keyframes grassland {
+  to {
+    width: 20rem;
+    height: 12.375rem;
+  }
+}
+
+@keyframes grass {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes trees {
+  0% {
+    transform: translateY(-200%);
+  }
+  80% {
+    transform: translateY(10%);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-box-btn {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-circle {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rider-box {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rider {
+  from {
+    transform: translateY(-10%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes jet {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .waimai-container {

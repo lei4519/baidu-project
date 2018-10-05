@@ -5,6 +5,317 @@
 @import "loading.scss";
 @import "welcome.scss";
 
+.loading {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background-color: #ffece9;
+  
+  .rider {
+    position: absolute;
+    top: p2r(232);
+    right: p2r(108);
+    @include size(154, 121);
+    @include bgImg('../images/loading/rider1_.png');
+  }
+  .progress {
+    @include center(-416/2);
+    top: p2r(360);
+    @include size(416, 20);
+    background-color: #fc2e4d;
+    border: 2px solid #373838;
+    border-radius: 20px;
+    overflow: hidden;
+    .line{
+      height: 100%;
+      width: 80%;
+      background-color: #ffece9;
+    }
+  }
+  .loading-txt {
+    @include center(-220/2);
+    top: p2r(420);
+    @include size(220, 28);
+    @include bgImg('../images/loading/loading-txt.png');
+  }
+  .logo {
+    @include center(-162/2);
+    bottom: p2r(118);
+    @include size(162, 39);
+    @include bgImg('../images/loading/waimai-logo.png');
+
+  }
+  .copyright {
+    position: absolute;
+    bottom: p2r(73);
+    font-size: p2r(24);
+    color: #ff96a4;
+    text-align: center;
+    width: 100%;
+  }
+  &.animate{
+    .line{
+      animation: loading 1.5s linear forwards;
+    }
+    .rider{
+      animation: moving 1.5s linear forwards;
+    }
+  }
+  @keyframes loading {
+    to{
+      width: 0%;
+    }
+  }
+  @keyframes moving {
+    10%{
+      transform: translate(p2r(-26*1), p2r(-10));
+    }
+    20%{
+      transform: translate(p2r(-26*2), p2r(10));
+    }
+    30%{
+      transform: translate(p2r(-26*3), p2r(-10));
+    }
+    40%{
+      transform: translate(p2r(-26*4), p2r(10));
+    }
+    50%{
+      transform: translate(p2r(-26*5), p2r(-10));
+    }
+    60%{
+      transform: translate(p2r(-26*6), p2r(10));
+    }
+    70%{
+      transform: translate(p2r(-26*7), p2r(-10));
+    }
+    80%{
+      transform: translate(p2r(-26*8), p2r(10));
+    }
+    90%{
+      transform: translate(p2r(-26*9), p2r(-10));
+    }
+    100%{
+      transform: translate(p2r(-26*10), p2r(10));
+    }
+  }
+}
+
+.welcome {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: deepskyblue;
+  .clouds {
+    position: absolute;
+    bottom: 0;
+    @include size(640, 673);
+    @include bgImg('../images/page1/clouds.png');
+  }
+  .info {
+    @include center(-397/2);
+    top: p2r(42);
+    @include size(397, 224);
+    @include bgImg('../images/page1/theme-title.png');
+    opacity: 0;
+    .hello {
+      position: absolute;
+      top: p2r(20);
+      right: p2r(8);
+      opacity: 0;
+      @include size(70, 75);
+      @include bgImg('../images/page1/hello.png');
+    }
+  }
+  .rider-box {
+    @include center(-167/2);
+    bottom: p2r(346);
+    @include size(167, 279);
+    opacity: 0;
+    .rider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include bgImg('../images/page1/rider2.png');
+    }
+    .jet {
+      position: absolute;
+      bottom: 0;
+      opacity: 0;
+      @include size(167, 32);
+      @include bgImg('../images/page1/jet1.png');
+    }
+  }
+  .grassland {
+    position: absolute;
+    bottom: 0;
+    @include size(640, 20);
+    @include bgImg('../images/page1/grass1.png');
+    .grass {
+      position: absolute;
+      bottom: 0;
+      @include size(640, 228);
+      @include bgImg('../images/page1/grass2.png');
+      transform: scale(3, 1);
+      opacity: 0;
+    }
+  }
+  .trees {
+    @include center(-599/2);
+    bottom: p2r(352);
+    @include size(599, 71);
+    @include bgImg('../images/page1/trees.png');
+    opacity: 0;
+  }
+  .rotate-box-btn {
+    @include center(-208/2);
+    bottom: p2r(86);
+    @include size(208, 208);
+    transform: scale(0);
+    opacity: 0;
+    .circle,
+    .rotate-circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .circle {
+      @include bgImg('../images/page1/circle1.png');
+    }
+    .rotate-circle {
+      @include bgImg('../images/page1/circle2.png');
+    }
+    .btn {
+      width: 100%;
+      height: 100%;
+      background: url(../images/page1/bear-btn-aft.png) no-repeat center / p2r(124) p2r(113);
+    }
+  }
+  .text {
+    position: absolute;
+    bottom: p2r(38);
+    width: 100%;
+    font-size: p2r(32);
+    color: #485b00;
+    text-align: center;
+  }
+  &.animate{
+    .grassland{
+        animation: grassland 0.5s forwards;
+        .grass{
+          animation: grass 0.5s 0.5s linear forwards;
+        }
+    }
+    .trees{
+      animation: trees 0.5s 1s forwards;
+    }
+    .rotate-box-btn{
+      animation: rotate-box-btn 0.5s 1.5s forwards;
+      .rotate-circle{
+        animation: rotate-circle 1s linear infinite;
+      }
+    }
+    .rider-box{
+      animation: rider-box 0.5s 2s forwards;
+      .rider{
+        animation: rider 0.5s 2.5s linear infinite;
+      }
+      .jet{
+        animation: jet 0.5s 2.5s linear infinite;
+      }
+      &.moving{
+        .rider,
+        .jet{
+          animation: moving 0.5s linear forwards;
+        }
+      }
+    }
+    .info{
+      animation: rider-box 0.5s 3s forwards;
+      .hello{
+        animation: jet 0.5s 3.5s forwards;
+      }
+    }
+    @keyframes moving {
+      to{
+        transform: scale(1.5) translateY(p2r(100));
+        opacity: 0;
+      }
+    }
+    @keyframes grassland {
+        to{
+            @include size(640, 396);
+        }
+    }
+    @keyframes grass {
+        to{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    @keyframes trees {
+      0%{
+        transform: translateY(-200%);
+      }
+      80%{
+        transform: translateY(10%);
+        opacity: 1;
+      }
+      90%{
+        transform: translateY(-10%);
+        opacity: 1;
+      }
+      100%{
+        transform: none;
+        opacity: 1;
+      }
+    }
+    @keyframes rotate-box-btn {
+      to{
+        transform: none;
+        opacity: 1;
+      }
+    }
+    @keyframes rotate-circle {
+      to{
+        transform: rotate(360deg)
+      }
+    }
+    @keyframes rider-box {
+      from{
+        transform: translateY(-50%);
+      }
+      to{
+        transform: none;
+        opacity: 1;
+      }
+    }
+    @keyframes rider {
+      from{
+        transform: translateY(-10%);
+      }
+      to{
+        transform: none;
+      }
+    }
+    @keyframes jet {
+      from{
+        transform: scale(0, 0);
+      }
+      to{
+        opacity: 1;
+        transform: none;
+      }
+    }
+}
+}
 
 .waimai-container {
   position: absolute;
