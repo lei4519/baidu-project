@@ -822,15 +822,45 @@ a {
 @keyframes heightBigger {
   to {
     height: 100%; } }
+@keyframes rotate5 {
+  0% {
+    transform: rotate(90deg); }
+  90% {
+    transform: rotate(-5deg); }
+  100% {
+    transform: none; } }
+@keyframes rotate45 {
+  0% {
+    transform: rotate(90deg); }
+  90% {
+    opacity: 1;
+    transform: rotate(-45deg); }
+  100% {
+    opacity: 1;
+    transform: none; } }
 .swiper-slide.animate .title h3 {
   animation: r2l 0.5s forwards; }
 .swiper-slide.animate .title p {
   animation: r2l 0.5s 0.2s forwards; }
 .swiper-slide.animate .title .line {
   animation: heightBigger 0.5s linear forwards; }
+.swiper-slide.animate .scroll-page1 .bg {
+  animation: rotate5 0.5s forwards; }
+.swiper-slide.animate .scroll-page1 .person {
+  animation: rotate5 0.5s 0.5s forwards; }
+.swiper-slide.animate .scroll-page1 .message-container {
+  animation: rotate45 0.5s 1s forwards; }
 
 .page1 {
   background-color: #be8651; }
+  .page1 .bg,
+  .page1 .person {
+    transform-origin: 10rem 30.40625rem;
+    transform: rotate(90deg); }
+  .page1 .message-container {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
   .page1 .scroll-page1 .bg {
     position: absolute;
     left: 50%;
@@ -878,7 +908,7 @@ a {
         position: absolute;
         right: 0;
         bottom: 2.5rem; }
-  .page1 .scroll-page1 .message-contarner {
+  .page1 .scroll-page1 .message-container {
     position: absolute;
     bottom: 4.375rem;
     right: 4.375rem;
@@ -889,7 +919,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .page1 .scroll-page1 .message-contarner .info {
+    .page1 .scroll-page1 .message-container .info {
       background: url("../images/page2/txt-work.png") no-repeat center/100% 100%;
       width: 6.875rem;
       height: 0.9375rem; }
@@ -924,7 +954,7 @@ a {
       width: 2.65625rem;
       height: 2.21875rem;
       background: url("../images/page2/leg2.png") no-repeat center/100% 100%; }
-  .page1 .scroll-page2 .message-contarner {
+  .page1 .scroll-page2 .message-container {
     position: absolute;
     bottom: 4.375rem;
     right: 4.375rem;
@@ -935,7 +965,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .page1 .scroll-page2 .message-contarner .info {
+    .page1 .scroll-page2 .message-container .info {
       background: url("../images/page2/txt-life.png") no-repeat center/100% 100%;
       width: 7rem;
       height: 0.96875rem; }
@@ -984,7 +1014,7 @@ a {
       background: url("../images/page2/word4.png") no-repeat center/100% 100%;
       width: 2.46875rem;
       height: 2.28125rem; }
-  .page1 .scroll-page3 .message-contarner {
+  .page1 .scroll-page3 .message-container {
     position: absolute;
     bottom: 4.375rem;
     right: 4.375rem;
@@ -994,7 +1024,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .page1 .scroll-page3 .message-contarner .info {
+    .page1 .scroll-page3 .message-container .info {
       background: url("../images/page2/txt-res.png") no-repeat center/100% 100%;
       width: 6.875rem;
       height: 0.9375rem; }

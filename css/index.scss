@@ -364,6 +364,30 @@
       height: 100%;
     }
   }
+  @keyframes rotate5 {
+    0%{
+      transform: rotate(90deg);
+    }
+    90%{
+      transform: rotate(-5deg);
+    }
+    100%{
+      transform: none;
+    }
+  }
+  @keyframes rotate45 {
+    0%{
+      transform: rotate(90deg);
+    }
+    90%{
+      opacity: 1;
+      transform: rotate(-45deg);
+    }
+    100%{
+      opacity: 1;
+      transform: none;
+    }
+  }
   .title {
     h3 {
       animation: r2l 0.5s forwards;
@@ -375,10 +399,33 @@
       animation: heightBigger 0.5s linear forwards;
     }
   }
+    .scroll-page1{
+      .bg{
+        animation: rotate5 0.5s forwards;
+      }
+      .person{
+        animation: rotate5 0.5s 0.5s forwards;
+      }
+      .message-container{
+        animation: rotate45 0.5s 1s forwards;
+      }
+    }
+    .scroll-page2{}
+    .scroll-page3{}
 }
 
 .page1 {
   background-color: #be8651;
+  .bg,
+  .person{
+    transform-origin: p2r(320) p2r(973);
+    transform: rotate(90deg);
+  }
+  .message-container{
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
   .scroll-page1 {
     .bg {
       @include center(-576/2);
@@ -423,7 +470,7 @@
         }
       }
     }
-    .message-contarner {
+    .message-container {
       position: absolute;
       bottom: p2r(140);
       right: p2r(140);
@@ -467,7 +514,7 @@
         @include bgImg('../images/page2/leg2.png');
       }
     }
-    .message-contarner {
+    .message-container {
       position: absolute;
       bottom: p2r(140);
       right: p2r(140);
@@ -525,7 +572,7 @@
         @include size(79, 73);
       }
     }
-    .message-contarner {
+    .message-container {
       position: absolute;
       bottom: p2r(140);
       right: p2r(140);
