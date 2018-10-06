@@ -368,24 +368,74 @@
     0%{
       transform: rotate(90deg);
     }
-    90%{
+    20%{
       transform: rotate(-5deg);
     }
-    100%{
+    30%{
       transform: none;
+    }
+    80%{
+      transform: none;
+    }
+    100%{
+      transform: rotate(-90deg);
     }
   }
   @keyframes rotate45 {
     0%{
       transform: rotate(90deg);
     }
-    90%{
+    10%{
       opacity: 1;
       transform: rotate(-45deg);
+    }
+    20%{
+      opacity: 1;
+      transform: none;
+    }
+    85%{
+      opacity: 1;
+      transform: none;
+    }
+    100%{
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+  }
+  @keyframes rotate5hold {
+    0%{
+      transform: rotate(90deg);
+    }
+    20%{
+      transform: rotate(-5deg);
+    }
+    30%{
+      transform: none;
+    }
+    100%{
+      transform: none;
+    }
+  }
+  @keyframes rotate45hold {
+    0%{
+      transform: rotate(90deg);
+    }
+    10%{
+      opacity: 1;
+      transform: rotate(-45deg);
+    }
+    20%{
+      opacity: 1;
+      transform: none;
     }
     100%{
       opacity: 1;
       transform: none;
+    }
+  }
+  @keyframes leg {
+    to{
+      opacity: 1;
     }
   }
   .title {
@@ -400,18 +450,42 @@
     }
   }
     .scroll-page1{
+      display: none;
+      // .bg{
+      //   animation: rotate5 3s forwards;
+      // }
+      // .person{
+      //   animation: rotate5 3s 0.5s forwards;
+      // }
+      // .message-container{
+      //   animation: rotate45 2.8s 1s forwards;
+      // }
+    }
+    .scroll-page2{
       .bg{
-        animation: rotate5 0.5s forwards;
+        animation: rotate5hold 3s 3s forwards;
       }
       .person{
-        animation: rotate5 0.5s 0.5s forwards;
+        animation: rotate5hold 3s 3.5s forwards;
       }
       .message-container{
-        animation: rotate45 0.5s 1s forwards;
+        animation: rotate45hold 2.8s 4s forwards;
+      }
+      .leg2{
+        animation: leg 1s infinite;
       }
     }
-    .scroll-page2{}
-    .scroll-page3{}
+    // .scroll-page3{
+    //   .bg{
+    //     animation: rotate5hold 3s 6s forwards;
+    //   }
+    //   .person{
+    //     animation: rotate5hold 3s 6.5s forwards;
+    //   }
+    //   .message-container{
+    //     animation: rotate45hold 2.8s 7s forwards;
+    //   }
+    // }
 }
 
 .page1 {
@@ -507,6 +581,7 @@
         @include bgImg('../images/page2/leg1.png');
       }
       .leg2 {
+        opacity: 0;
         position: absolute;
         left: p2r(193);
         bottom: p2r(120);
@@ -576,7 +651,7 @@
       position: absolute;
       bottom: p2r(140);
       right: p2r(140);
-
+      z-index: 1;
       @include bgImg('../images/page2/txt-bubbl.png');
       @include size(363, 119);
       display: flex;
