@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="loading" style="display: none;">
+    <div class="loading" >
         <div class="rider"></div>
         <div class="progress">
             <div class="line"></div>
@@ -25,7 +25,7 @@
         <div class="logo"></div>
         <div class="copyright">@ 2015 Baidu Waimai Produced</div>
     </div>
-    <div class="welcome" style="display: none;">
+    <div class="welcome" >
         <div class="clouds"></div>
         <div class="info">
             <div class="hello"></div>
@@ -48,7 +48,7 @@
 
     <div class="waimai-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide page1  animate">
+            <div class="swiper-slide page1">
                 <div class="title">
                     <h3>生活中,</h3>
                     <p>经常有这种时候...</p>
@@ -118,10 +118,22 @@
                 </div>
                 <div class="bg"></div>
                 <div class="sphere"></div>
-                <div class="license"></div>
-                <div class="oil"></div>
-                <div class="evil"></div>
+                <div class="normal-card-box">
+                    <div class="license"></div>
+                    <div class="oil"></div>
+                    <div class="evil"></div>
+                </div>
+                <div class="animate-card-box">
+                    <div class="card1"></div>
+                    <div class="card2"></div>
+                    <div class="card3"></div>
+                </div>
                 <div class="bear"></div>
+                <div class="animate-bear-box">
+                    <div class="bear1"></div>
+                    <div class="bear2"></div>
+                    <div class="bear3"></div>
+                </div>
             </div>
             <div class="swiper-slide page4">
                 <div class="title">
@@ -132,9 +144,11 @@
                 </div>
                 <div class="bg"></div>
                 <div class="sphere"></div>
-                <div class="card1"></div>
-                <div class="card2"></div>
-                <div class="card3"></div>
+                <div class="card-box">
+                    <div class="card1"></div>
+                    <div class="card2"></div>
+                    <div class="card3"></div>
+                </div>
                 <div class="bear"></div>
             </div>
             <div class="swiper-slide page5">
@@ -146,7 +160,14 @@
                 </div>
                 <div class="bg"></div>
                 <div class="sphere"></div>
-                <div class="cloud"></div>
+                <div class="cloud">
+                    <div class="snow"></div>
+                    <div class="snow"></div>
+                    <div class="snow"></div>
+                    <div class="snow"></div>
+                    <div class="snow"></div>
+                    <div class="snow"></div>
+                </div>
                 <div class="bear">
                     <div class="shadow"></div>
                 </div>
@@ -161,18 +182,18 @@
                 <div class="sphere"></div>
                 <div class="bear">
                     <div class="gift-box">
-                        <div class="gift1"></div>
-                        <div class="gift2"></div>
-                        <div class="gift3"></div>
-                        <div class="gift4"></div>
-                        <div class="gift5"></div>
-                        <div class="gift6"></div>
-                        <div class="gift7"></div>
-                        <div class="gift8"></div>
-                        <div class="gift9"></div>
-                        <div class="gift10"></div>
-                        <div class="gift11"></div>
-                        <div class="gift12"></div>
+                        <div><div class="gift1"></div></div>
+                        <div><div class="gift2"></div></div>
+                        <div><div class="gift3"></div></div>
+                        <div><div class="gift4"></div></div>
+                        <div><div class="gift5"></div></div>
+                        <div><div class="gift6"></div></div>
+                        <div><div class="gift7"></div></div>
+                        <div><div class="gift8"></div></div>
+                        <div><div class="gift9"></div></div>
+                        <div><div class="gift10"></div></div>
+                        <div><div class="gift11"></div></div>
+                        <div><div class="gift12"></div></div>
                     </div>
                 </div>
             </div>
@@ -194,6 +215,8 @@
             </div>
         </div>
     </div>
+    <audio src="music/hlw.mp3" style="z-index: 1000; position: absolute;"></audio>
+    <button class="audioControl"></button>
 
     <script src="lib/swiper.min.js"></script>
     <script src="lib/zepto.js"></script>

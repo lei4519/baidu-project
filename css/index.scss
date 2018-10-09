@@ -318,6 +318,7 @@
 
 .waimai-container {
   position: absolute;
+  overflow: hidden;
   top: 0;
   left: 0;
   width: 100%;
@@ -364,80 +365,6 @@
       height: 100%;
     }
   }
-  @keyframes rotate5 {
-    0%{
-      transform: rotate(90deg);
-    }
-    20%{
-      transform: rotate(-5deg);
-    }
-    30%{
-      transform: none;
-    }
-    80%{
-      transform: none;
-    }
-    100%{
-      transform: rotate(-90deg);
-    }
-  }
-  @keyframes rotate45 {
-    0%{
-      transform: rotate(90deg);
-    }
-    10%{
-      opacity: 1;
-      transform: rotate(-45deg);
-    }
-    20%{
-      opacity: 1;
-      transform: none;
-    }
-    85%{
-      opacity: 1;
-      transform: none;
-    }
-    100%{
-      opacity: 0;
-      transform: rotate(-90deg);
-    }
-  }
-  @keyframes rotate5hold {
-    0%{
-      transform: rotate(90deg);
-    }
-    20%{
-      transform: rotate(-5deg);
-    }
-    30%{
-      transform: none;
-    }
-    100%{
-      transform: none;
-    }
-  }
-  @keyframes rotate45hold {
-    0%{
-      transform: rotate(90deg);
-    }
-    10%{
-      opacity: 1;
-      transform: rotate(-45deg);
-    }
-    20%{
-      opacity: 1;
-      transform: none;
-    }
-    100%{
-      opacity: 1;
-      transform: none;
-    }
-  }
-  @keyframes leg {
-    to{
-      opacity: 1;
-    }
-  }
   .title {
     h3 {
       animation: r2l 0.5s forwards;
@@ -449,55 +376,326 @@
       animation: heightBigger 0.5s linear forwards;
     }
   }
-    .scroll-page1{
-      display: none;
-      // .bg{
-      //   animation: rotate5 3s forwards;
-      // }
-      // .person{
-      //   animation: rotate5 3s 0.5s forwards;
-      // }
-      // .message-container{
-      //   animation: rotate45 2.8s 1s forwards;
-      // }
+  @keyframes rotateInOut {
+    0% {
+      transform: rotateZ(90deg);
     }
-    .scroll-page2{
-      .bg{
-        animation: rotate5hold 3s 3s forwards;
+    25% {
+      transform: rotateZ(-5deg);
+      opacity: 1;
+    }
+    30% {
+      transform: rotateZ(0deg);
+      opacity: 1;
+    }
+    65% {
+      transform: rotateZ(0deg);
+      opacity: 1;
+    }
+    70% {
+      transform: rotateZ(5deg);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-90deg);
+      opacity: 0;
+    }
+  }
+  @keyframes rotateInNotOut {
+    0% {
+      transform: rotateZ(90deg);
+    }
+    95% {
+      transform: rotateZ(-5deg);
+      opacity: 1;
+    }
+    100% {
+      transform: rotateZ(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes runUpDownLeftRight {
+    25% {
+      transform: translate(2%, 0%);
+    }
+    50% {
+      transform: translate(-2%, 2%);
+    }
+    75% {
+      transform: translate(0%, -2%);
+    }
+    100% {
+      transform: translate(0%, 0%);
+    }
+  }
+  @keyframes left2Right2left {
+    30% {
+      transform: translateX(-30%);
+    }
+    60% {
+      transform: translateX(30%);
+    }
+    100% {
+      transform: none;
+    }
+
+  }
+  @keyframes rotateBack {
+    to {
+      transform: none;
+    }
+  }
+  &.page1 {
+    .scroll-page1 {
+      .bg {
+        animation: rotateInOut 2s forwards;
       }
-      .person{
-        animation: rotate5hold 3s 3.5s forwards;
+      .person {
+        animation: rotateInOut 2s 0.2s forwards;
+        .files {
+          .paper1 {
+            animation: left2Right2left 1s infinite;
+          }
+          .paper2 {
+            animation: left2Right2left 0.5s infinite;
+          }
+        }
       }
-      .message-container{
-        animation: rotate45hold 2.8s 4s forwards;
-      }
-      .leg2{
-        animation: leg 1s infinite;
+      .message-container {
+        animation: rotateInOut 2s 0.5s forwards;
       }
     }
-    // .scroll-page3{
-    //   .bg{
-    //     animation: rotate5hold 3s 6s forwards;
-    //   }
-    //   .person{
-    //     animation: rotate5hold 3s 6.5s forwards;
-    //   }
-    //   .message-container{
-    //     animation: rotate45hold 2.8s 7s forwards;
-    //   }
-    // }
+    .scroll-page2 {
+      .bg {
+        animation: rotateInOut 2s 2.5s forwards;
+      }
+      .person {
+        animation: rotateInOut 2s 2.7s forwards;
+        .leg2 {
+          animation: rotateBack 1s infinite;
+        }
+      }
+      .message-container {
+        animation: rotateInOut 2s 3s forwards;
+      }
+    }
+    .scroll-page3 {
+      .bg {
+        animation: rotateInNotOut 0.5s 5s forwards;
+      }
+      .person {
+        animation: rotateInNotOut 0.5s 5.2s forwards;
+        .word1 {
+          animation: runUpDownLeftRight 1s infinite;
+        }
+        .word2 {
+          animation: runUpDownLeftRight 0.5s infinite;
+        }
+        .word3 {
+          animation: runUpDownLeftRight 1.2s infinite;
+        }
+        .word4 {
+          animation: runUpDownLeftRight 1.3s infinite;
+        }
+
+      }
+      .message-container {
+        animation: rotateInNotOut 0.2s 5.5s forwards;
+      }
+    }
+  }
+  @keyframes bottom2Top {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes small2Big2small {
+    0% {
+      transform: scale(0);
+    }
+    95% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes Shake {
+    30% {
+      transform: rotateZ(5deg);
+    }
+    60% {
+      transform: rotateZ(-5deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
+  &.page2 {
+    .bg {
+      animation: rotateInNotOut .5s forwards;
+    }
+    .bear {
+      animation: bottom2Top .5s 1s forwards;
+      .face1 {
+        animation: small2Big2small .5s 2s forwards;
+      }
+      .face2 {
+        animation: small2Big2small .5s 2s forwards;
+      }
+      .hand-left {
+        animation: Shake 0.5s infinite;
+      }
+      .hand-right {
+        animation: Shake 0.8s infinite;
+      }
+    }
+    .table {
+      animation: rider-box .5s .5s forwards;
+    }
+    .foods {
+      animation: rider-box .5s 1.5s forwards;
+    }
+  }
+  @keyframes down {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: translateY(150%);
+      opacity: 0;
+    }
+  }
+  &.page3 {
+    .bg {
+      animation: rotateInNotOut .5s forwards;
+    }
+    .bear {
+      animation: rider-box .5s .5s forwards;
+    }
+    .license {
+      animation: small2Big2small .5s 1s forwards, runUpDownLeftRight .5s 1.5s infinite;
+    }
+    .oil {
+      animation: small2Big2small .3s 1s forwards, runUpDownLeftRight .5s 1.5s infinite;
+    }
+    .evil {
+      animation: small2Big2small .7s 1s forwards, runUpDownLeftRight .5s 1.5s infinite;
+    }
+  }
+  &.page4 {
+    .bg {
+      animation: rotateInNotOut .5s forwards;
+    }
+    .card-box {
+      div {
+        animation: small2Big2small 1s 1s forwards;
+      }
+    }
+    .bear {
+      animation: rider-box .5s .5s forwards;
+    }
+  }
+  @keyframes snowLeft {
+    from{}
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+      transform: translate(-200%, 1000%);
+    }
+  }
+  @keyframes snowRight {
+    from{}
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+      transform: translate(200%, 1000%);
+    }
+  }
+  &.page5 {
+    .bg {
+      animation: rotateInNotOut .5s forwards;
+    }
+    .cloud {
+      animation: small2Big2small .5s .5s forwards, runUpDownLeftRight 1s 1s infinite;
+      .snow {
+        &:nth-child(1) {
+          animation: snowLeft 1.5s 1.5s infinite;
+        }
+        &:nth-child(2) {
+          animation: snowRight 1.3s 1.5s infinite;
+        }
+        &:nth-child(3) {
+          animation: snowLeft 2s 1.5s infinite;
+        }
+        &:nth-child(4) {
+          animation: snowRight 3s 1.5s infinite;
+        }
+        &:nth-child(5) {
+          animation: snowLeft 1.1s 1.5s infinite;
+        }
+        &:nth-child(6) {
+          animation: snowRight 1.8s 1.5s infinite;
+        }
+      }
+    }
+    .bear {
+      animation: rider-box 1s 1s forwards, rider .5s 2s infinite;
+      .shadow {
+        animation: jet .5s 2s infinite;
+      }
+    }
+  }
+  @keyframes revolve {
+    from{
+      transform: none;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+  @keyframes big2small {
+    from{}
+    to{
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  &.page6{
+    .gift-box{
+      @for $i from 1 through 12 {
+        > div:nth-child(#{$i}){
+          animation: revolve 2s $i*0.1s infinite;
+        }
+      }
+      @for $i from 1 through 12 {
+        > div > div:nth-child(#{$i}){
+          animation: revolve 1s $i*0.1s infinite;
+        }
+      }
+    }
+  }
 }
 
 .page1 {
   background-color: #be8651;
   .bg,
-  .person{
-    transform-origin: p2r(320) p2r(973);
-    transform: rotate(90deg);
+  .person {
+    transform-origin: 50% 200%;
+    opacity: 0;
   }
-  .message-container{
+  .message-container {
     transform-origin: right bottom;
-    transform: rotate(90deg);
     opacity: 0;
   }
   .scroll-page1 {
@@ -581,7 +779,8 @@
         @include bgImg('../images/page2/leg1.png');
       }
       .leg2 {
-        opacity: 0;
+        transform-origin: left bottom;
+        transform: rotateZ(30deg);
         position: absolute;
         left: p2r(193);
         bottom: p2r(120);
@@ -685,6 +884,8 @@
     @include size(592, 490);
     @include center(-592/2);
     bottom: p2r(330);
+    opacity: 0;
+    transform-origin: 50% 200%;
   }
   .sphere {
     @include bgImg('../images/page3/sphere2.png');
@@ -700,8 +901,10 @@
     background-repeat: no-repeat;
     background-position: p2r(-103) p2r(-96);
     background-size: p2r(368) p2r(427);
+    opacity: 0;
     .face1 {
       position: absolute;
+      opacity: 0;
       top: 0;
       left: p2r(-102);
       @include size(102, 102);
@@ -709,6 +912,7 @@
     }
     .face2 {
       position: absolute;
+      opacity: 0;
       top: p2r(-102);
       right: p2r(-51);
       @include size(101, 102);
@@ -720,6 +924,7 @@
       left: p2r(30);
       @include size(74, 77);
       @include bgImg('../images/page3/hand-left_.png');
+      transform-origin: left top;
     }
     .hand-right {
       position: absolute;
@@ -727,17 +932,20 @@
       right: p2r(30);
       @include size(74, 77);
       @include bgImg('../images/page3/hand-right.png');
+      transform-origin: right top;
     }
   }
   .table {
     @include center(-514/2);
     bottom: p2r(140);
+    opacity: 0;
     @include size(514, 258);
     @include bgImg('../images/page3/table.png');
   }
   .foods {
     @include center(-354/2);
     bottom: p2r(330);
+    opacity: 0;
     @include size(354, 152);
     @include bgImg('../images/page3/foods.png');
   }
@@ -746,6 +954,8 @@
 .page3 {
   background-color: #dd8a03;
   .bg {
+    opacity: 0;
+    transform-origin: 50% 200%;
     @include center(-592/2);
     @include size(592, 580);
     @include bgImg('../images/page4/bg5.png');
@@ -758,32 +968,85 @@
     position: absolute;
     bottom: p2r(0);
   }
-  .license {
-    @include size(197, 140);
-    @include bgImg('../images/page4/license.png');
-    position: absolute;
-    left: p2r(40);
-    bottom: p2r(500);
+  .normal-card-box {
+    div {
+      opacity: 0;
+    }
+    .license {
+      @include size(197, 140);
+      @include bgImg('../images/page4/license.png');
+      position: absolute;
+      left: p2r(40);
+      bottom: p2r(500);
+    }
+    .oil {
+      @include size(205, 107);
+      @include bgImg('../images/page4/oil.png');
+      position: absolute;
+      left: p2r(225);
+      bottom: p2r(660);
+    }
+    .evil {
+      @include size(198, 163);
+      @include bgImg('../images/page4/evil.png');
+      position: absolute;
+      right: p2r(30);
+      bottom: p2r(480);
+    }
   }
-  .oil {
-    @include size(205, 107);
-    @include bgImg('../images/page4/oil.png');
-    position: absolute;
-    left: p2r(225);
-    bottom: p2r(660);
-  }
-  .evil {
-    @include size(198, 163);
-    @include bgImg('../images/page4/evil.png');
-    position: absolute;
-    right: p2r(30);
-    bottom: p2r(480);
+  .animate-card-box {
+    div {
+      opacity: 0;
+    }
+    .card1 {
+      @include size(228, 151);
+      @include bgImg('../images/page4/license1.png');
+      position: absolute;
+      left: p2r(40);
+      bottom: p2r(500);
+    }
+    .card2 {
+      @include size(231, 156);
+      @include bgImg('../images/page4/oil1.png');
+      position: absolute;
+      left: p2r(225);
+      bottom: p2r(660);
+    }
+    .card3 {
+      @include size(211, 173);
+      @include bgImg('../images/page4/evil1.png');
+      position: absolute;
+      right: p2r(30);
+      bottom: p2r(480);
+    }
   }
   .bear {
+    opacity: 0;
     @include center(-206/2);
     bottom: p2r(195);
     @include size(206, 321);
     @include bgImg('../images/page4/bear3.png');
+  }
+  .animate-bear-box {
+    div {
+      opacity: 0;
+      bottom: p2r(195);
+    }
+    .bear1 {
+      @include center(-251/2);
+      @include size(251, 335);
+      @include bgImg('../images/page4/bear3-1-1.png');
+    }
+    .bear2 {
+      @include center(-215/2);
+      @include size(215, 313);
+      @include bgImg('../images/page4/bear3-2-1.png');
+    }
+    .bear3 {
+      @include center(-290/2);
+      @include size(290, 321);
+      @include bgImg('../images/page4/bear3-3-1.png');
+    }
   }
 }
 
@@ -795,6 +1058,8 @@
     @include bgImg('../images/page5/bg6.png');
     position: absolute;
     bottom: p2r(300);
+    transform-origin: 50% 200%;
+    opacity: 0;
   }
   .sphere {
     @include size(640, 356);
@@ -802,33 +1067,40 @@
     position: absolute;
     bottom: p2r(0);
   }
-  .card1 {
-    @include size(160, 175);
-    @include bgImg('../images/page5/card1.png');
-    position: absolute;
-    left: p2r(32);
-    bottom: p2r(435);
+  .card-box {
+    div {
+      opacity: 0;
+    }
+    .card1 {
+      @include size(160, 175);
+      @include bgImg('../images/page5/card1.png');
+      position: absolute;
+      left: p2r(32);
+      bottom: p2r(435);
+    }
+    .card2 {
+      @include size(161, 209);
+      @include bgImg('../images/page5/card2.png');
+      position: absolute;
+      left: p2r(240);
+      bottom: p2r(530);
+    }
+    .card3 {
+      @include size(167, 184);
+      @include bgImg('../images/page5/card3.png');
+      position: absolute;
+      right: p2r(45);
+      bottom: p2r(420);
+    }
   }
-  .card2 {
-    @include size(161, 209);
-    @include bgImg('../images/page5/card2.png');
-    position: absolute;
-    left: p2r(240);
-    bottom: p2r(530);
-  }
-  .card3 {
-    @include size(167, 184);
-    @include bgImg('../images/page5/card3.png');
-    position: absolute;
-    right: p2r(45);
-    bottom: p2r(420);
-  }
+
   .bear {
     position: absolute;
     left: p2r(200);
     bottom: p2r(170);
     @include size(309, 325);
     @include bgImg('../images/page5/bear4.png');
+    opacity: 0;
   }
 }
 
@@ -840,6 +1112,8 @@
     @include bgImg('../images/page6/bg7.png');
     position: absolute;
     bottom: p2r(300);
+    opacity: 0;
+    transform-origin: 50% 200%;
   }
   .sphere {
     @include size(640, 356);
@@ -848,12 +1122,36 @@
     bottom: p2r(0);
   }
   .cloud {
+    opacity: 0;
     @include size(432, 160);
     @include bgImg('../images/page6/weather-cloud.png');
     @include center(-432/2);
     bottom: p2r(645);
+    .snow {
+      opacity: 0;
+      @include bgImg('../images/page6/snow-piece.png');
+      @include size(32, 32);
+      position: absolute;
+      bottom: 0;
+      &:nth-child(2) {
+        left: p2r(32*3);
+      }
+      &:nth-child(3) {
+        left: p2r(32*4);
+      }
+      &:nth-child(4) {
+        left: p2r(32*5);
+      }
+      &:nth-child(5) {
+        left: p2r(32*6);
+      }
+      &:nth-child(6) {
+        left: p2r(32*7);
+      }
+    }
   }
   .bear {
+    opacity: 0;
     @include center(-230/2);
     bottom: p2r(175);
     @include size(230, 390);
@@ -891,77 +1189,116 @@
       position: absolute;
       top: 0;
       left: 50%;
-      .gift1 {
+      > div{
+        opacity: 0;
+      }
+      > div:nth-child(1){
         @include center(-35/2);
         @include size(35, 29);
-        @include bgImg('../images/page7/gift1.png');
         transform: rotate(1*28deg) translateY(p2r(240));
       }
-      .gift2 {
+      > div:nth-child(2){
         @include center(-93/2);
         @include size(93, 79);
-        @include bgImg('../images/page7/gift2.png');
         transform: rotate(2*28deg) translateY(p2r(240));
       }
-      .gift3 {
+      > div:nth-child(3){
         @include center(-72/2);
         @include size(72, 64);
-        @include bgImg('../images/page7/gift3.png');
         transform: rotate(3*28deg) translateY(p2r(240));
       }
-      .gift4 {
+      > div:nth-child(4){
         @include center(-91/2);
         @include size(91, 73);
-        @include bgImg('../images/page7/gift4.png');
         transform: rotate(4*28deg) translateY(p2r(240));
       }
-      .gift5 {
+      > div:nth-child(5){
         @include center(-99/2);
         @include size(99, 65);
-        @include bgImg('../images/page7/gift5.png');
         transform: rotate(5*28deg) translateY(p2r(240));
       }
-      .gift6 {
+      > div:nth-child(6){
         @include center(-107/2);
         @include size(107, 82);
-        @include bgImg('../images/page7/gift6.png');
         transform: rotate(6*28deg) translateY(p2r(240));
       }
-      .gift7 {
+      > div:nth-child(7){
         @include center(-107/2);
         @include size(107, 80);
-        @include bgImg('../images/page7/gift7.png');
         transform: rotate(7*28deg) translateY(p2r(240));
       }
-      .gift8 {
+      > div:nth-child(8){
         @include center(-88/2);
         @include size(88, 64);
-        @include bgImg('../images/page7/gift8.png');
         transform: rotate(8*28deg) translateY(p2r(240));
       }
-      .gift9 {
+      > div:nth-child(9){
         @include center(-78/2);
         @include size(78, 50);
-        @include bgImg('../images/page7/gift9.png');
         transform: rotate(9*28deg) translateY(p2r(240));
       }
-      .gift10 {
+      > div:nth-child(10){
         @include center(-49/2);
         @include size(49, 37);
-        @include bgImg('../images/page7/gift10.png');
         transform: rotate(10*28deg) translateY(p2r(240));
       }
-      .gift11 {
+      > div:nth-child(11){
         @include center(-51/2);
         @include size(51, 31);
-        @include bgImg('../images/page7/gift11.png');
         transform: rotate(11*28deg) translateY(p2r(240));
       }
-      .gift12 {
+      > div:nth-child(12){
         @include center(-37/2);
         @include size(37, 23);
-        @include bgImg('../images/page7/gift12.png');
         transform: rotate(12*28deg) translateY(p2r(240));
+      }
+      .gift1 {
+        @include size(35, 29);
+        @include bgImg('../images/page7/gift1.png');
+      }
+      .gift2 {
+        @include size(93, 79);
+        @include bgImg('../images/page7/gift2.png');
+      }
+      .gift3 {
+        @include size(72, 64);
+        @include bgImg('../images/page7/gift3.png');
+      }
+      .gift4 {
+        @include size(91, 73);
+        @include bgImg('../images/page7/gift4.png');
+      }
+      .gift5 {
+        @include size(99, 65);
+        @include bgImg('../images/page7/gift5.png');
+      }
+      .gift6 {
+        @include size(107, 82);
+        @include bgImg('../images/page7/gift6.png');
+      }
+      .gift7 {
+        @include size(107, 80);
+        @include bgImg('../images/page7/gift7.png');
+      }
+      .gift8 {
+        @include size(88, 64);
+        @include bgImg('../images/page7/gift8.png');
+      }
+      .gift9 {
+        @include size(78, 50);
+        @include bgImg('../images/page7/gift9.png');
+      }
+      .gift10 {
+        @include size(49, 37);
+        @include bgImg('../images/page7/gift10.png');
+      }
+      .gift11 {
+        @include size(51, 31);
+        @include bgImg('../images/page7/gift11.png');
+      }
+      .gift12 {
+        @include size(37, 23);
+        @include bgImg('../images/page7/gift12.png');
       }
     }
   }
@@ -1019,3 +1356,13 @@
   }
 }
 
+.audioControl{
+  @include bgImg('../images/play.png');
+  @include size(36,36);
+  position: fixed;
+  top: p2r(32);
+  right: p2r(32);
+  z-index: 998;
+  border: none;
+  outline: none;
+}
